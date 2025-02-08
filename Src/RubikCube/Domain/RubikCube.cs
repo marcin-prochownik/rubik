@@ -24,12 +24,13 @@ public class RubikCube
     }
 
     /// <summary>
-    /// Rotates the specified face of the cube in the specified direction.
+    /// Rotates the specified face of the cube in the specified direction by 90 degrees.
     /// </summary>
     /// <param name="face">The face which should be rotated.</param>
     /// <param name="direction">The direction of the rotation.</param>
     public void Rotate(FaceType face, RotateDirection direction)
     {
+        // TODO: Implement the rotation logic
     }
     
     /// <summary>
