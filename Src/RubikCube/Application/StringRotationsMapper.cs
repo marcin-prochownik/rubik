@@ -25,24 +25,21 @@ public static class StringRotationsMapper
 
     private static Tuple<FaceType, RotateDirection> ParseSingleRotation(string input)
     {
-        switch (input)
+        return input switch
         {
-            case "F": return Tuple.Create(FaceType.Front, RotateDirection.Clockwise);
-            case "B": return Tuple.Create(FaceType.Back, RotateDirection.Clockwise);
-            case "U": return Tuple.Create(FaceType.Up, RotateDirection.Clockwise);
-            case "D": return Tuple.Create(FaceType.Down, RotateDirection.Clockwise);
-            case "L": return Tuple.Create(FaceType.Left, RotateDirection.Clockwise);
-            case "R": return Tuple.Create(FaceType.Right, RotateDirection.Clockwise);
-
-            case "F'": return Tuple.Create(FaceType.Front, RotateDirection.CounterClockwise);
-            case "B'": return Tuple.Create(FaceType.Back, RotateDirection.CounterClockwise);
-            case "U'": return Tuple.Create(FaceType.Up, RotateDirection.CounterClockwise);
-            case "D'": return Tuple.Create(FaceType.Down, RotateDirection.CounterClockwise);
-            case "L'": return Tuple.Create(FaceType.Left, RotateDirection.CounterClockwise);
-            case "R'": return Tuple.Create(FaceType.Right, RotateDirection.CounterClockwise);
-
-            default:
-                throw new ArgumentException($"Specified rotation '{input}' is not valid.");
-        }
+            "F" => Tuple.Create(FaceType.Front, RotateDirection.Clockwise),
+            "B" => Tuple.Create(FaceType.Back, RotateDirection.Clockwise),
+            "U" => Tuple.Create(FaceType.Up, RotateDirection.Clockwise),
+            "D" => Tuple.Create(FaceType.Down, RotateDirection.Clockwise),
+            "L" => Tuple.Create(FaceType.Left, RotateDirection.Clockwise),
+            "R" => Tuple.Create(FaceType.Right, RotateDirection.Clockwise),
+            "F'" => Tuple.Create(FaceType.Front, RotateDirection.CounterClockwise),
+            "B'" => Tuple.Create(FaceType.Back, RotateDirection.CounterClockwise),
+            "U'" => Tuple.Create(FaceType.Up, RotateDirection.CounterClockwise),
+            "D'" => Tuple.Create(FaceType.Down, RotateDirection.CounterClockwise),
+            "L'" => Tuple.Create(FaceType.Left, RotateDirection.CounterClockwise),
+            "R'" => Tuple.Create(FaceType.Right, RotateDirection.CounterClockwise),
+            _ => throw new ArgumentException($"Specified rotation '{input}' is not valid.")
+        };
     }
 }
